@@ -1,45 +1,30 @@
-import { Button } from "@mui/material";
+import { Button, Stack } from "@mui/material";
 import Home from "./Home";
 import Projects from "./Projects";
 import Skills from "./Skills";
 import Contact from "./assets/Contact";
-import FloatingActionButtons from "./assets/FloatingActionButtons";
 
 function App() {
-
-  const scrollTo = (id) => {
-    document.getElementById(id)?.scrollIntoView({ behavior: "smooth" });
-  };
+  const scrollTo = (id) => document.getElementById(id)?.scrollIntoView({ behavior: "smooth" });
 
   return (
-    <>
-      {/* Navbar */}
-      <nav style={{ display: "flex", gap: "10px", padding: "10px", position: "fixed", top: 0, width: "100%", zIndex: 1000 }}>
-        <Button onClick={() => scrollTo("home")}>HOME</Button>
-        <Button onClick={() => scrollTo("projects")}>PROJECTS</Button>
-        <Button onClick={() => scrollTo("skills")}>SKILLS</Button>
-        <Button onClick={() => scrollTo("contact")}>CONTACT</Button>
-      </nav>
+    <div className="app">
+      <header className="navbar">
+        <strong className="brand">BK<span>.</span></strong>
+        <Stack direction="row" spacing={1}>
+          {["home", "projects", "skills", "contact"].map((id) => (
+            <Button key={id} onClick={() => scrollTo(id)}>{id}</Button>
+          ))}
+        </Stack>
+      </header>
 
-      {/* Sections */}
-      <div id="home">
-        <Home />
-      </div>
-
-      <div id="projects">
-        <Projects />
-      </div>
-
-      <div id="skills">
-        <Skills />
-      </div>
-
-      <div id="contact">
-        <Contact />
-      </div>
-
-      <FloatingActionButtons />
-    </>
+      <main>
+        <section id="home"><Home onProjects={() => scrollTo("projects")} /></section>
+        <section id="projects"><Projects /></section>
+        <section id="skills"><Skills /></section>
+        <section id="contact"><Contact /></section>
+      </main>
+    </div>
   );
 }
 
