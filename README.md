@@ -1,16 +1,45 @@
-# React + Vite
+# Bakeerathan Karthigan — Portfolio
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+Personal portfolio website for **Bakeerathan Karthigan**, a Computer Engineering undergraduate focused on software engineering and full-stack development.
 
-Currently, two official plugins are available:
+## ✨ Highlights
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Babel](https://babeljs.io/) (or [oxc](https://oxc.rs) when used in [rolldown-vite](https://vite.dev/guide/rolldown)) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+- Responsive single-page portfolio
+- Project showcase with GitHub links
+- Technical skills grouped by engineering area
+- Contact and professional links
+- Smooth section navigation
+- React + Material UI implementation
 
-## React Compiler
+## 🛠️ Tech Stack
 
-The React Compiler is not enabled on this template because of its impact on dev & build performances. To add it, see [this documentation](https://react.dev/learn/react-compiler/installation).
+- React
+- JavaScript
+- Material UI
+- Vite
+- CSS
+- GitHub
 
-## Expanding the ESLint configuration
+## 🚀 Run Locally
 
-If you are developing a production application, we recommend using TypeScript with type-aware lint rules enabled. Check out the [TS template](https://github.com/vitejs/vite/tree/main/packages/create-vite/template-react-ts) for information on how to integrate TypeScript and [`typescript-eslint`](https://typescript-eslint.io) in your project.
+    git clone https://github.com/cypher2k22/portfolio.git
+    cd portfolio
+    npm install
+    npm run dev
+
+Production build:
+
+    npm run build
+
+Lint:
+
+    npm run lint
+
+## 🔗
+
+GitHub: https://github.com/cypher2k22  
+Portfolio: https://github.com/cypher2k22/portfolio
+
+## 👤 About
+
+Computer Engineering undergraduate at the University of Sri Jayewardenepura, interested in software engineering, full-stack systems, real-time applications, and practical problem solving.
