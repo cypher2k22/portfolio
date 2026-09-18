@@ -1,54 +1,32 @@
-import { Box, Typography, Button } from "@mui/material";
+import { Box, Chip, Grid, Typography } from "@mui/material";
+
+const groups = {
+  Languages: ["C", "C++", "Java", "Python", "JavaScript", "TypeScript"],
+  Frontend: ["React", "React Native", "HTML", "CSS"],
+  Backend: ["Node.js", "Express", "REST APIs"],
+  Data: ["MySQL", "Firebase", "Firestore"],
+  Systems: ["Networking", "Linux", "Raspberry Pi", "Arduino"],
+  Tools: ["Git", "GitHub", "Docker", "Vite"],
+};
 
 function Skills() {
-  const skills = [
-    "C",
-    "C++",
-    "Java",
-    "Python",
-    "React",
-    "Node.js",
-    "MySQL",
-    "Networking",
-    "Arduino"
-  ];
-
   return (
-    <Box
-      sx={{
-        minHeight: "100vh",
-        minWidth: "100vw",
-        display: "flex",
-        flexDirection: "column",
-        justifyContent: "center",
-        alignItems: "center",
-        textAlign: "center",
-        background: "linear-gradient(90deg, #070300ff, #7866ffff)",
-        color: "white",
-        px: 2,
-      }}
-    >
-      <Typography variant="h1" sx={{ fontWeight: 700, mb: 2 }}>
-        SKILLS
-      </Typography>
-
-      <Typography variant="h5" sx={{ mb: 4 }}>
-        Here are some of my skills.
-      </Typography>
-
-      {/* Skill Buttons */}
-      <Box sx={{ display: "flex", flexWrap: "wrap", gap: 2, justifyContent: "center" }}>
-        {skills.map((skill, index) => (
-          <Button
-            key={index}
-            variant="contained"
-            color="secondary"
-            sx={{ px: 3, py: 1, fontSize: "0.9rem" }}
-          >
-            {skill}
-          </Button>
+    <Box className="section">
+      <Typography className="eyebrow">TECHNICAL TOOLKIT</Typography>
+      <Typography variant="h2">Skills</Typography>
+      <Typography className="section-copy">Technologies I use while building academic, personal, and team projects.</Typography>
+      <Grid container spacing={3} sx={{ mt: 2 }}>
+        {Object.entries(groups).map(([group, skills]) => (
+          <Grid item xs={12} sm={6} md={4} key={group}>
+            <Box className="skill-group">
+              <Typography variant="h6">{group}</Typography>
+              <Box sx={{ display: "flex", flexWrap: "wrap", gap: 1, mt: 2 }}>
+                {skills.map((skill) => <Chip key={skill} label={skill} variant="outlined" />)}
+              </Box>
+            </Box>
+          </Grid>
         ))}
-      </Box>
+      </Grid>
     </Box>
   );
 }
