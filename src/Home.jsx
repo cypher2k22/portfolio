@@ -1,39 +1,23 @@
-import { Box, Typography, Button } from "@mui/material";
+import { Box, Button, Chip, Stack, Typography } from "@mui/material";
 
-function Home() {
+function Home({ onProjects }) {
   return (
-    <>
-    <Box
-      sx={{
-        minHeight: "100vh",
-        minWidth: "100vw",
-        display: "flex",
-        flexDirection: "column",
-        justifyContent: "center",
-        alignItems: "center",
-        textAlign: "center",
-        background: "linear-gradient(90deg, #070300ff, #7866ffff)",
-        color: "white",
-        px: 2,
-      }}
-    >
-      <Typography variant="h1" sx={{ fontWeight: 700, mb: 2 }}>
-        Hi, I am KARTHIGAN
+    <Box className="hero">
+      <Typography className="eyebrow">COMPUTER ENGINEERING • SOFTWARE DEVELOPMENT</Typography>
+      <Typography variant="h1">Hi, I'm <span>Karthigan.</span></Typography>
+      <Typography className="hero-copy">
+        I build full-stack applications, real-time systems, and practical software
+        with a focus on clean architecture and problem solving.
       </Typography>
-      <Typography variant="h5" sx={{ mb: 4 }}>
-        A Computer Engineering undergraduate at University of Sri Jayewardenepura
-      </Typography>
-      <Button
-        variant="contained"
-        color="secondary"
-        sx={{ px: 4, py: 1, fontSize: "1rem" }}
-      >
-        Explore My Portfolio
-      </Button>
+      <Stack direction="row" spacing={1} flexWrap="wrap" useFlexGap sx={{ mb: 4 }}>
+        {["C++", "Java", "Python", "React", "Node.js", "SQL"].map((x) => <Chip key={x} label={x} />)}
+      </Stack>
+      <Stack direction="row" spacing={2}>
+        <Button variant="contained" size="large" onClick={onProjects}>View Projects</Button>
+        <Button variant="outlined" size="large" href="https://github.com/cypher2k22" target="_blank">GitHub</Button>
+      </Stack>
+      <Typography className="hero-meta">University of Sri Jayewardenepura • Expected graduation 2028</Typography>
     </Box>
-   
-    </>
-
   );
 }
 
